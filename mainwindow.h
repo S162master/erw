@@ -1,10 +1,16 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+
+#include <QStringList>
+#include <QTableWidgetItem>
 #include <QMainWindow>
-#include "managefile.h"
-#include "logic.h"
-#include "entrypoint.h"
+#include <QLabel>
+#include <QFileDialog>
+#include <QMessageBox>
+#include <QFileDialog>
+#include "struct.h"
+#include <singlepointofempty.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -19,18 +25,17 @@ public:
     ~MainWindow();
 
 private slots:
-    void loadData();
-    void openWindowFile();
-    void Calculate();
+    void on_btn_openfile_clicked();
+
+    void on_btn_loaddata_clicked();
+
+    void on_pushButton_calculations_clicked();
 
 private:
     Ui::MainWindow *ui;
-    Data data;
-
-    char* QstringToCharArray(QString qstr);
-    QStringList ConvertRowToQTFormat(char **row, size_t size);
-    void showData(Data* data);
-    void showErrorWindow(char* nameError);
+    dat information ;
 
 };
+
 #endif // MAINWINDOW_H
+
